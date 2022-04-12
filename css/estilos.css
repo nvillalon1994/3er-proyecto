@@ -10,7 +10,15 @@ body {
     font-family: 'Roboto', sans-serif;
     /* background-color: black; */
 }
-
+/* header {
+    box-sizing: border-box;
+    min-height: 100vh;
+    position: relative;
+    transform-style: inherit;
+    width: 100vw;
+    text-align: center;
+    
+} */
 h1,
 h2,
 h3,
@@ -53,6 +61,7 @@ header{
     /* position: relative; */
     background-size: cover;
     background-position: center center;
+    background-attachment: fixed;
 }
 /* header::before {
     content: "";
@@ -403,7 +412,7 @@ nav {
 }
 
 
-.textos-questions a {
+/* .textos-questions a {
     margin: 28px 0 0 0;
     width: 130px;
     display: inline-block;
@@ -417,7 +426,7 @@ nav {
     font-size: 14px;
     border-radius: 5px;
     box-shadow: 0 8px 32px rgba(31, 222, 130, .46);
-}
+} */
 
 /* Results */
 
@@ -692,7 +701,9 @@ footer {
     }
 
     /* Questions */
-
+    .title{
+        font-size: 50px;
+    }
     .questions {
         height: 720px;
         justify-content: center;
@@ -702,7 +713,18 @@ footer {
     .questions>img {
         width: 400px;
     }
+    .textos-questions h1 {
+        font-size: 20px;
+    }
 
+    .textos-questions p {
+        font-size: 15px;
+        font-weight: 100;
+        margin-top: 20px;
+        color: black;
+        letter-spacing: 2px;
+        text-align: justify;
+    }
     /* results */
 
     .conten-results {
