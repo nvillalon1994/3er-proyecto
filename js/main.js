@@ -4,6 +4,7 @@ let ubicacionPrincipal = window.pageYOffset; //0
 
 window.addEventListener("scroll", function(){
     let desplazamientoActual = window.pageYOffset; //180
+    
     if(ubicacionPrincipal >= desplazamientoActual){ // 200 > 180
         document.getElementsByTagName("nav")[0].style.top = "0px"
     }else{
@@ -14,21 +15,20 @@ window.addEventListener("scroll", function(){
 })
 
 // Menu
+const hamburguer = document.querySelector(".hamburguer");
+const navMenu = document.querySelector(".nav-menu");
 
-let enlacesHeader = document.querySelectorAll(".enlaces-header")[0];
-let semaforo = true;
-
-document.querySelectorAll(".hamburguer")[0].addEventListener("click", function(){
-    if(semaforo){
-        document.querySelectorAll(".hamburguer")[0].style.color ="#fff";
-        semaforo= false;
-    }else{
-        document.querySelectorAll(".hamburguer")[0].style.color ="#fff";
-        semaforo= true;
-    }
-
-    enlacesHeader.classList.toggle("menudos")
+hamburguer.addEventListener("click",() => {
+    hamburguer.classList.toggle("active")
+    navMenu.classList.toggle("active")
 })
+
+document.querySelectorAll(".nav-link").forEach(n =>n.addEventListener("click",()=>{
+    hamburguer.classList.remove("active")
+    navMenu.classList.remove("active")
+}))
+
+
 const contactForm = document.getElementById("contacto")
 const errorDiv = document.getElementById("error")
 
@@ -52,5 +52,5 @@ contactForm.onsubmit = function(event){
         errorDiv.appendChild(p)
     }
 
-    // Regular expresions
+    
 }
